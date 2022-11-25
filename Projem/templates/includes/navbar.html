@@ -1,0 +1,93 @@
+{% if session["id"]==1 %}
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <a class="navbar-brand" href="/admin">Makromaden</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/aboutedit">Hakkımızda</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/contactedit">İletişim</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+        {% if session["logged_in"] %}
+        <li class="nav-item active">
+            <a class="nav-link" href="/adminmessages">Sipariş Listele</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/dashboard">Kontrol Paneli</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/logout">Çıkış</a>
+          </li>
+        {% else %}
+          <li class="nav-item active">
+            <a class="nav-link" href="/login">Giriş</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/register">Kayıt Ol</a>
+          </li>
+        {% endif %}
+        </ul>
+        
+    </div>
+  </nav>
+
+{% else %}
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <a class="navbar-brand" href="/">Makromaden</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/about">Hakkımızda</a>
+          </li>
+          <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="/products" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Ürünler
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="/products/bags">Çantalar</a>
+          <a class="dropdown-item" href="/products/home_product">Ev Ürünleri</a>
+          <a class="dropdown-item" href="/products/sets">Makrome Kitleri</a>
+          <a class="dropdown-item" href="/products">Tüm ürünler</a>
+        </div>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="/images">Ürün Görselleri</a>
+          </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="/contact">İletişim</a>
+          </li>
+        
+        </ul>
+        <ul class="navbar-nav ml-auto">
+        {% if session["logged_in"] %}
+          <li class="nav-item active">
+            <a class="nav-link" href="/costumermessages">Sipariş Oluştur</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/cart">Sepet</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/logout">Çıkış</a>
+          </li>
+        {% else %}
+          <li class="nav-item active">
+            <a class="nav-link" href="/login">Giriş</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/register">Kayıt Ol</a>
+          </li>
+        {% endif %}
+        </ul>
+        
+    </div>
+  </nav>
+{% endif %}  

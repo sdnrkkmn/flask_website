@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<h3>Ürün oluştur</h3>
+<hr>
+{% from "includes/formhelp.html" import render_field %}
+ {% if filename %}
+        <div>
+            <img src="{{ url_for('display_image', filename=filename) }}">
+        </div>
+    {% endif %}
+<form method=post action="/addproduct" enctype="multipart/form-data">
+    <dl>
+            <p>
+                <input type="file" name="file" class="form-control" autocomplete="off" required>
+            </p>
+    </dl>
+    {{ render_field(form.title ,class="form-control")}}
+    {{ render_field(form.category ,class="form-control") }}
+    {{ render_field(form.content ,class="form-control")}}
+    {{ render_field(form.stock ,class="form-control") }}
+    {{ render_field(form.price ,class="form-control") }}
+  <button type="submit" class="btn btn-dark">Ürün Ekle</button>
+</form>
+{% endblock %}

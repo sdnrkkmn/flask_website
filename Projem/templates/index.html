@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+{% block body %}
+       <main role="main">
+      
+      <!-- Main jumbotron for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <div class="container">
+          <h1 class="display-3">Merhaba, {{session["name"]}}!</h1>
+          <p> Kişiye Özel Ürünlerimizle kendinizi özel ve benzersiz hissedin. İstediğiniz renk,ebat ve modelde ürünleri siz arzu edin biz üretelim. Her kadın özeldir ilkemizden yola çıkarak siz değerli müşterilerimize hizmet sunmaktayız. Ürünlerimizi incelemek için tıklayınız. Dilerseniz instagram adresimizi takip edip yeni ürünlerimize ulaşabilirsiniz.</p>
+          <p><a class="btn btn-primary btn-lg" href="/about" role="button">Learn more &raquo;</a></p>
+        </div>
+      </div>
+      
+      
+      <div class="container">
+        <!-- Example row of columns -->
+        <div class="row">
+          <div class="col-md-4">
+            <h2>Çantalar</h2>
+            <p>Bohem tarzınızı yansıtacak şık çanta tasarımlarımızla her geçen gün envanterimize bir yenisini daha eklemekteyiz.
+            Şık çanta modellerimizi incelemek için tıklayınız.</p>
+            <p><a class="btn btn-secondary" href="products/bags" role="button">View details &raquo;</a></p>
+          </div>
+          <div class="col-md-4">
+            <h2>Ev ürünleri</h2>
+            <p>Evinizin havasını değiştirecek bohem ürünlerimizi incelemek için tıklayınız.</p>
+            <p><a class="btn btn-secondary" href="products/home_product" role="button">View details &raquo;</a></p>
+          </div>
+          <div class="col-md-4">
+            <h2>Makrome Kitleri</h2>
+            <p>Sen de iplerin renkli dünyasını keşfetmek istiyorsan, el emeği göz nuru kendi ürünlerimi yapmak istiyorum diyorsan birbirinden güzel hobi kitlerimizi incelemek için tıklayınız.</p>
+            <p><a class="btn btn-secondary" href="products/sets" role="button">View details &raquo;</a></p>
+          </div>
+        </div>
+
+        <hr>
+
+      </div> <!-- /container -->
+
+    </main>
+
+    <footer class="container">
+      <p>&copy; Company 2019-2020</p>
+            
+    </footer>
+
+{% endblock body %}

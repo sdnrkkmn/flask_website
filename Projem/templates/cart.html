@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block body %}
+{% if cart %}
+{% for cart in cart %}
+{{cart.title}}    Fiyatı: {{cart.price}} TL <a href="/cartdelete/{{cart.id}}" class="btn btn-danger">Sil</a><br>
+
+{% endfor %}
+<hr>
+<a class="btn btn-primary" href="/cartok" role="button">Sepeti onayla</a>
+
+{% else %}
+<div class="alert alert-warning">
+Sepetinizde ürün bulunmamaktadır..
+</div>
+{% endif %}
+
+{% endblock body %}

@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block body %}
+{% if product %}
+<h4>{{product.image}}</h4>
+<hr>
+<h4>{{product.title}}</h4>
+<hr>
+Kategori: {{product.category}}
+<hr>
+Tarih: {{product.upload_time}}
+<hr>
+ {{product.content|safe}}
+ <hr>
+Stok Durumu: {{product.stock}}
+<hr>
+Fiyatı: {{product.price}} TL
+<hr>
+<a class="btn btn-primary" href="/cart" role="button">Sepete Ekle</a>
+
+{% else %}
+<div class="alert alert-warning">
+Böyle bir ürün bulunmamaktadır..
+</div>
+{% endif %}
+
+{% endblock body %}

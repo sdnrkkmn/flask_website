@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<h3>Sipariş Oluştur</h3>
+<small>Hoşgeldin, {{session["name"]}}</small>
+<hr>
+<a href="/addmessages" class="btn btn-warning">Sipariş oluştur</a>
+<hr>
+
+{% if products %}
+<table class="table table-hover table-dark">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">username</th>
+        <th scope="col">name</th>
+        <th scope="col">content</th>
+       <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for product in products %} 
+    <tr>
+      <th scope="row">{{product.id}}</th>
+      <th scope="row">{{product.username}}</th>
+      <th scope="row">{{product.name}}</th>
+      <th scope="row">{{product.content}}</th>
+      <td><a href="/cart" class="btn btn-light">Sepete ekle</a> </td>
+      <td><a href="/deletesipariş/{{product.id}}" class="btn btn-light">Sil</a> </td>
+    </tr>
+   {% endfor %}
+  </tbody>
+</table>
+{% else %}
+<div class="alert alert-danger"> Henüz bir siparişiniz bulunmamaktadır...</div>
+{% endif %}
+{% endblock %}

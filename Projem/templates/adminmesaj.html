@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<h3>Kontrol Paneli</h3>
+<small>Hoşgeldin, {{session["name"]}}</small>
+
+{% if products %}
+<table class="table table-hover table-dark">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">username</th>
+        <th scope="col">name</th>
+        <th scope="col">content</th>
+       <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for product in products %} 
+    <tr>
+      <th scope="row">{{products.id}}</th>
+      <th scope="row">{{products.username}}</th>
+      <th scope="row">{{products.name}}</th>
+      <th scope="row">{{products.content}}</th>
+      <td><a href="/cart" class="btn btn-light">Sepete ekle</a> </td>
+      <td><a href="deletesipariş/{{products.id}}" class="btn btn-light">Sil</a> </td>
+    </tr>
+   {% endfor %}
+  </tbody>
+</table>
+{% else %}
+<div class="alert alert-danger"> Henüz bir siparişiniz bulunmamaktadır...</div>
+{% endif %}
+{% endblock %}
